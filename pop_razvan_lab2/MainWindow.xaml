@@ -8,27 +8,30 @@
         Title="Virtual Doughnuts Factory" Height="450" Width="800" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
     <Grid>
         <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top"
-Width="131" Margin="0,26,0,0">
+Width="230">
             <MenuItem Header="File">
-                <MenuItem Header="Exit"/>
+                <MenuItem Header="Exit" Click="exitToolStripMenuItem_Click"/>
             </MenuItem>
             <MenuItem Header="_Doughnuts">
                 <MenuItem Header="Make">
                     <MenuItem Header="Raised">
-                        <MenuItem x:Name="glazedMenuItem" Header="Glazed"/>
-                        <MenuItem x:Name="sugarMenuItem" Header="Sugar"/>
+                        <MenuItem x:Name="glazedToolStripMenuItem" Header="Glazed"
+Click="glazedToolStripMenuItem_Click" IsCheckable="True"/>
+                        <MenuItem x:Name="sugarToolStripMenuItem" Header="Sugar"
+IsCheckable="True" Click="sugarToolStripMenuItem_Click"/>
                     </MenuItem>
                     <MenuItem Header="Filled"/>
                 </MenuItem>
+                <MenuItem x:Name="mnuStop" Header="Stop"/>
             </MenuItem>
         </Menu>
         <Label x:Name="lblTitle" Content="Doughnuts - Bake &amp; Sale" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
         <GroupBox x:Name="gbRaised" Header="Raised" Margin="26,105,498,217" FontWeight="Bold">
             <Canvas Margin="61,0,-42,0">
                 <Label x:Name="lblGlazedRaised" Content="Glazed" Canvas.Left="23" Canvas.Top="10" FontWeight="Normal"/>
-                <TextBox x:Name="txtGlazedRaised_" Canvas.Left="116" Canvas.Top="14" Text="0" TextWrapping="Wrap" Width="78" RenderTransformOrigin="-0.214,-1.036" IsReadOnly="True"/>
+                <TextBox x:Name="txtGlazedRaised" Canvas.Left="116" Canvas.Top="14" Text="0" TextWrapping="Wrap" Width="78" RenderTransformOrigin="-0.214,-1.036" IsReadOnly="True"/>
                 <Label x:Name="lblSugarRaised" Content="Sugar" Canvas.Left="23" Canvas.Top="45" RenderTransformOrigin="-4.219,0.235" FontWeight="Normal"/>
-                <TextBox x:Name="txtSugarRaised_" Canvas.Left="116" Canvas.Top="58" Text="0" TextWrapping="Wrap" Width="78" IsReadOnly="False" RenderTransformOrigin="-0.572,0.304"/>
+                <TextBox x:Name="txtSugarRaised" Canvas.Left="116" Canvas.Top="58" Text="0" TextWrapping="Wrap" Width="78" IsReadOnly="False" RenderTransformOrigin="-0.572,0.304"/>
             </Canvas>
         </GroupBox>
         <GroupBox x:Name="gbFilled" Header="Filled " Margin="385,105,120,207" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
@@ -42,11 +45,11 @@ Width="131" Margin="0,26,0,0">
             </GroupBox.RenderTransform>
             <Canvas>
                 <Label x:Name="lblLemonFilled" Content="Lemon" Canvas.Left="6" Canvas.Top="-1" RenderTransformOrigin="-0.066,-0.105" FontWeight="Normal"/>
-                <TextBox x:Name="txtLemonFilled_" Canvas.Left="142" Canvas.Top="6" Text="0" TextWrapping="Wrap" Width="120" IsReadOnly="True" RenderTransformOrigin="-0.019,-0.24"/>
+                <TextBox x:Name="txtLemonFilled" Canvas.Left="142" Canvas.Top="6" Text="0" TextWrapping="Wrap" Width="120" IsReadOnly="True" RenderTransformOrigin="-0.019,-0.24"/>
                 <Label x:Name="lblChocolateFilled" Content="Chocolate" Canvas.Left="-2" Canvas.Top="31" RenderTransformOrigin="0.443,0.655" FontWeight="Normal"/>
-                <TextBox x:Name="txtChocolateFilled_" Canvas.Left="143" Canvas.Top="40" Text="0" TextWrapping="Wrap" Width="120" IsReadOnly="True"/>
+                <TextBox x:Name="txtChocolateFilled" Canvas.Left="143" Canvas.Top="40" Text="0" TextWrapping="Wrap" Width="120" IsReadOnly="True"/>
                 <Label x:Name="lblVanillaFilled" Content="Vanilla" Canvas.Left="2" Canvas.Top="66" FontWeight="Normal"/>
-                <TextBox x:Name="txtVanillaFilled_" Canvas.Left="147" Canvas.Top="71" Text="0" TextWrapping="Wrap" Width="120" IsReadOnly="False"/>
+                <TextBox x:Name="txtVanillaFilled" Canvas.Left="147" Canvas.Top="71" Text="0" TextWrapping="Wrap" Width="120" IsReadOnly="False"/>
 
             </Canvas>
         </GroupBox>
